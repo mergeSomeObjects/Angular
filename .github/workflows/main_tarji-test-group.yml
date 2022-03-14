@@ -24,8 +24,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
-          npm run test --if-present
+          npm run build --prod
+          working-directory: .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -45,12 +45,12 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
-
+          
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'tarji-test-group'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2940E4427A3C4D729F119C89FA9D44D7 }}
-          package: .
+          publish-profile: $
+          package: ./dist
+          
+          
