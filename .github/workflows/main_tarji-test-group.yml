@@ -47,6 +47,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'tarji-test-group'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1E423CC982384A4A88528A73918DC01D }}
-          package: .
+          publish-profile: $
+          package: ./dist/hello-world-app
