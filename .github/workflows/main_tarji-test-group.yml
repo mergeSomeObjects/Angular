@@ -51,6 +51,6 @@ jobs:
         with:
           app-name: 'tarji-test-group'
           publish-profile: $
-          package: ./dist/angular-app
+          package: ./dist/angular-project-app
           
           
